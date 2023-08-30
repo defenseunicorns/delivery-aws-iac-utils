@@ -288,7 +288,7 @@ func ValidateZarfInit(t *testing.T, tempFolder string) {
 }
 
 // Helper function to set default environment variable if it's not already set.
-func setDefaultEnvVar(key, defaultValue string) {
+func SetDefaultEnvVar(key, defaultValue string) {
 	if _, exists := os.LookupEnv(key); !exists {
 		if err := os.Setenv(key, defaultValue); err != nil {
 			log.Printf("Error setting environment variable %s: %v", key, err)

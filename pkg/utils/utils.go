@@ -3,6 +3,7 @@ package utils
 
 import (
 	"context"
+	"crypto/rand"
 	"encoding/base64"
 	"fmt"
 	"log"
@@ -294,4 +295,12 @@ func SetDefaultEnvVar(key, defaultValue string) {
 			log.Printf("Error setting environment variable %s: %v", key, err)
 		}
 	}
+}
+
+func generateRandomHex(n int) string {
+	b := make([]byte, n)
+	if _, err := rand.Read(b); err != nil {
+		panic(err)
+	}
+	return fmt.Sprintf("%X", b)
 }

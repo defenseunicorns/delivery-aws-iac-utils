@@ -297,7 +297,7 @@ func SetDefaultEnvVar(key, defaultValue string) {
 	}
 }
 
-func generateRandomHex(n int) string {
+func GenerateRandomHex(n int) string {
 	b := make([]byte, n)
 	if _, err := rand.Read(b); err != nil {
 		panic(err)

@@ -66,45 +66,6 @@ go-init: _create-folders
 		${BUILD_HARNESS_REPO}:${BUILD_HARNESS_VERSION} \
 		bash -c 'git config --global --add safe.directory /app && asdf install && go mod init github.com/defenseunicorns/terraform-aws-uds-eks && go mod tidy -v'
 
-# need to add tests here
-
-# .PHONY: _test-all
-# _test-all: _create-folders
-# 	echo "Running automated tests. This will take several minutes. At times it does not log anything to the console. If you interrupt the test run you will need to log into AWS console and manually delete any orphaned infrastructure."
-# 	docker run $(TTY_ARG) --rm \
-# 		--cap-add=NET_ADMIN \
-# 		--cap-add=NET_RAW \
-# 		-v "${PWD}:/app" \
-# 		-v "${PWD}/.cache/tmp:/tmp" \
-# 		-v "${PWD}/.cache/go:/root/go" \
-# 		-v "${PWD}/.cache/go-build:/root/.cache/go-build" \
-# 		-v "${PWD}/.cache/.terraform.d/plugin-cache:/root/.terraform.d/plugin-cache" \
-# 		-v "${PWD}/.cache/.zarf-cache:/root/.zarf-cache" \
-# 		--workdir "/app" \
-# 		-e TF_LOG_PATH \
-# 		-e TF_LOG \
-# 		-e GOPATH=/root/go \
-# 		-e GOCACHE=/root/.cache/go-build \
-# 		-e TF_PLUGIN_CACHE_MAY_BREAK_DEPENDENCY_LOCK_FILE=true \
-# 		-e TF_PLUGIN_CACHE_DIR=/root/.terraform.d/plugin-cache \
-# 		-e AWS_REGION \
-# 		-e AWS_DEFAULT_REGION \
-# 		-e AWS_ACCESS_KEY_ID \
-# 		-e AWS_SECRET_ACCESS_KEY \
-# 		-e AWS_SESSION_TOKEN \
-# 		-e AWS_SECURITY_TOKEN \
-# 		-e AWS_SESSION_EXPIRATION \
-# 		-e SKIP_SETUP \
-# 		-e SKIP_TEST \
-# 		-e SKIP_TEARDOWN \
-# 		${TF_VARS} \
-# 		${BUILD_HARNESS_REPO}:${BUILD_HARNESS_VERSION} \
-# 		bash -c 'git config --global --add safe.directory /app && asdf install && cd examples/complete && terraform init -upgrade=true && cd ../../test/e2e && go test -count 1 -v $(EXTRA_TEST_ARGS) .'
-
-# .PHONY: test
-# test: ## Run all automated tests. Requires access to an AWS account. Costs real money.
-# 	$(MAKE) _test-all EXTRA_TEST_ARGS="-timeout 3h"
-
 .PHONY: docker-save-build-harness
 docker-save-build-harness: _create-folders ## Pulls the build harness docker image and saves it to a tarball
 	docker pull ${BUILD_HARNESS_REPO}:${BUILD_HARNESS_VERSION}
@@ -136,10 +97,6 @@ _runhooks: _create-folders
 .PHONY: pre-commit-all
 pre-commit-all: ## Run all pre-commit hooks. Returns nonzero exit code if any hooks fail. Uses Docker for maximum compatibility
 	$(MAKE) _runhooks HOOK="" SKIP=""
-
-.PHONY: pre-commit-terraform
-pre-commit-terraform: ## Run the terraform pre-commit hooks. Returns nonzero exit code if any hooks fail. Uses Docker for maximum compatibility
-	$(MAKE) _runhooks HOOK="" SKIP="check-added-large-files,check-merge-conflict,detect-aws-credentials,detect-private-key,end-of-file-fixer,fix-byte-order-marker,trailing-whitespace,check-yaml,fix-smartquotes,go-fmt,golangci-lint,renovate-config-validator"
 
 .PHONY: pre-commit-golang
 pre-commit-golang: ## Run the golang pre-commit hooks. Returns nonzero exit code if any hooks fail. Uses Docker for maximum compatibility

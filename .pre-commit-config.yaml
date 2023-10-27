@@ -20,13 +20,15 @@ repos:
     rev: 0.2.0
     hooks:
       - id: fix-smartquotes
-  - repo: https://github.com/dnephin/pre-commit-golang
-    rev: v0.5.1
+  - repo: https://github.com/tekwizely/pre-commit-golang
+    rev: master
     hooks:
       - id: go-fmt
+      - id: go-mod-tidy
       - id: golangci-lint
         args:
-          - "--timeout=2m"
+          - "--timeout=10m"
+          - "--verbose"
   - repo: https://github.com/renovatebot/pre-commit-hooks
     rev: 37.34.1
     hooks:

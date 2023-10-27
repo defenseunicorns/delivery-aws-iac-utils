@@ -21,7 +21,7 @@ repos:
     hooks:
       - id: fix-smartquotes
   - repo: https://github.com/tekwizely/pre-commit-golang
-    rev: master
+    rev: v1.0.0-rc.1
     hooks:
       - id: go-fmt
       - id: go-mod-tidy

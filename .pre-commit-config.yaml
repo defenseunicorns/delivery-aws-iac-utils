@@ -26,7 +26,7 @@ repos:
       - id: go-fmt
       - id: golangci-lint
         args:
-          - "--timeout=10m"
+          - "--timeout=2m"
   - repo: https://github.com/renovatebot/pre-commit-hooks
     rev: 37.34.1
     hooks:

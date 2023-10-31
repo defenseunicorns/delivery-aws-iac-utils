@@ -64,7 +64,7 @@ go-init: _create-folders
 		-e SKIP_TEARDOWN \
 		${TF_VARS} \
 		${BUILD_HARNESS_REPO}:${BUILD_HARNESS_VERSION} \
-		bash -c 'git config --global --add safe.directory /app && asdf install && go mod init github.com/defenseunicorns/terraform-aws-uds-eks && go mod tidy -v'
+		bash -c 'git config --global --add safe.directory /app && asdf install && go mod init github.com/defenseunicorns/terraform-aws-eks && go mod tidy -v'
 
 .PHONY: docker-save-build-harness
 docker-save-build-harness: _create-folders ## Pulls the build harness docker image and saves it to a tarball

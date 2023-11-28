@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.3](https://github.com/defenseunicorns/delivery-aws-iac-utils/compare/v0.0.2...v0.0.3) (2023-11-28)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all dependencies ([#12](https://github.com/defenseunicorns/delivery-aws-iac-utils/issues/12)) ([90454d3](https://github.com/defenseunicorns/delivery-aws-iac-utils/commit/90454d308f8480ad21fba22fc19b949d8a8cbbd1))
+* remove uds references ([#13](https://github.com/defenseunicorns/delivery-aws-iac-utils/issues/13)) ([47f5f8d](https://github.com/defenseunicorns/delivery-aws-iac-utils/commit/47f5f8dcf20757e3a471716fd9ae77004e058259))
+
 ## [0.0.2](https://github.com/defenseunicorns/delivery-aws-iac-utils/compare/v0.0.1...v0.0.2) (2023-10-27)
 
 

@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/defenseunicorns/delivery-aws-iac-utils/compare/v0.0.3...v0.0.4) (2023-11-28)
+
+
+### Miscellaneous Chores
+
+* bump release ([e231732](https://github.com/defenseunicorns/delivery-aws-iac-utils/commit/e231732485bc9e2c1dcb28882b6d9588d272cc9f))
+
 ## [0.0.3](https://github.com/defenseunicorns/delivery-aws-iac-utils/compare/v0.0.2...v0.0.3) (2023-11-28)
 
 

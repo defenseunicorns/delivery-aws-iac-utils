@@ -5,6 +5,7 @@ go 1.21.4
 require (
 	github.com/aws/aws-sdk-go v1.48.6
 	github.com/gruntwork-io/terratest v0.46.7
+	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.8.4
 	k8s.io/api v0.28.4
 	k8s.io/apimachinery v0.28.4
@@ -66,7 +67,6 @@ require (
 	github.com/prometheus/client_model v0.5.0 // indirect
 	github.com/prometheus/common v0.45.0 // indirect
 	github.com/prometheus/procfs v0.12.0 // indirect
-	github.com/sirupsen/logrus v1.9.3 // indirect
 	github.com/tmccombs/hcl2json v0.6.0 // indirect
 	github.com/ulikunitz/xz v0.5.11 // indirect
 	github.com/zclconf/go-cty v1.14.1 // indirect

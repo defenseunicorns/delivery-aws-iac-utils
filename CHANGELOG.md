@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/defenseunicorns/delivery-aws-iac-utils/compare/v0.0.4...v0.0.5) (2023-11-29)
+
+
+### Styles
+
+* add logging ([#17](https://github.com/defenseunicorns/delivery-aws-iac-utils/issues/17)) ([89a4d40](https://github.com/defenseunicorns/delivery-aws-iac-utils/commit/89a4d40b6459a960f64971386d4b90e0928bd5ef))
+
 ## [0.0.4](https://github.com/defenseunicorns/delivery-aws-iac-utils/compare/v0.0.3...v0.0.4) (2023-11-28)
 
 

@@ -6,7 +6,6 @@ import (
 	"crypto/rand"
 	"encoding/base64"
 	"fmt"
-	"log"
 	"os"
 	"os/exec"
 	"testing"
@@ -17,6 +16,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/eks"
 	"github.com/gruntwork-io/terratest/modules/logger"
 	"github.com/gruntwork-io/terratest/modules/terraform"
+	"github.com/sirupsen/logrus"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	batchv1 "k8s.io/api/batch/v1"
@@ -214,9 +214,21 @@ func ValidateEFSFunctionality(t *testing.T, tempFolder string) {
 	require.NotNil(t, efsStorageClassName)
 	require.NotEmpty(t, efsStorageClassName)
 
+	// Log the efsStorageClassName
+	logrus.WithFields(logrus.Fields{
+		"EFS Storage Class Name": efsStorageClassName,
+	}).Info("Terraform EFS information retrieved")
+
 	// Get the cluster
 	cluster, err := GetEKSCluster(t, tempFolder)
 	require.NoError(t, err)
+
+	// Log the cluster
+	logrus.WithFields(logrus.Fields{
+		"Cluster":       cluster.Name,
+		"ClusterStatus": cluster.Status,
+	}).Info("Terraform EKS Cluster information retrieved")
+
 	clientset, err := NewK8sClientset(cluster)
 	require.NoError(t, err)
 	// Wait for the job "test-write" in the namespace "default" to complete, with a 2-minute timeout
@@ -232,15 +244,30 @@ func ValidateEFSFunctionality(t *testing.T, tempFolder string) {
 	err = wait.PollUntilContextCancel(ctx, time.Second, true, func(ctx context.Context) (bool, error) {
 		job, err := clientset.BatchV1().Jobs(namespace).Get(ctx, jobName, metav1.GetOptions{})
 		if err != nil {
+			logrus.WithFields(logrus.Fields{
+				"error": err,
+			}).Error("Failed to get Kubernetes job")
 			return false, fmt.Errorf("failed to get kubernetes jobs: %w", err)
 		}
 		for _, c := range job.Status.Conditions {
 			if c.Type == batchv1.JobComplete && c.Status == "True" {
+				logrus.WithFields(logrus.Fields{
+					"jobName": jobName,
+					"status":  c.Status,
+				}).Info("Job completed")
 				return true, nil
 			} else if c.Type == batchv1.JobFailed && c.Status == "True" {
+				logrus.WithFields(logrus.Fields{
+					"jobName": jobName,
+					"status":  c.Status,
+				}).Error("Job failed")
 				return false, fmt.Errorf("job failed")
 			}
 		}
+		logrus.WithFields(logrus.Fields{
+			"jobName": jobName,
+			"status":  job.Status,
+		}).Info("Job still running")
 		return false, nil
 	})
 
@@ -296,7 +323,15 @@ func ValidateZarfInit(t *testing.T, tempFolder string) {
 func SetDefaultEnvVar(key, defaultValue string) {
 	if _, exists := os.LookupEnv(key); !exists {
 		if err := os.Setenv(key, defaultValue); err != nil {
-			log.Printf("Error setting environment variable %s: %v", key, err)
+			logrus.WithFields(logrus.Fields{
+				"key": key,
+				"err": err,
+			}).Error("Error setting environment variable")
+		} else {
+			logrus.WithFields(logrus.Fields{
+				"key":   key,
+				"value": defaultValue,
+			}).Info("Successfully set environment variable")
 		}
 	}
 }

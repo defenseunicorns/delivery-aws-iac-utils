@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.0.6](https://github.com/defenseunicorns/delivery-aws-iac-utils/compare/v0.0.5...v0.0.6) (2024-02-07)
+
+
+### Miscellaneous Chores
+
+* **deps:** update all dependencies ([#16](https://github.com/defenseunicorns/delivery-aws-iac-utils/issues/16)) ([b92f68e](https://github.com/defenseunicorns/delivery-aws-iac-utils/commit/b92f68e3c8b8bc782e24d2fba5ce8922437bd6d1))
+* **deps:** update all dependencies ([#22](https://github.com/defenseunicorns/delivery-aws-iac-utils/issues/22)) ([d6fcebc](https://github.com/defenseunicorns/delivery-aws-iac-utils/commit/d6fcebc8bcb46171817dc4f178a5bc22b18eb74f))
+* **deps:** update pre-commit hook renovatebot/pre-commit-hooks to v37.175.0 ([#23](https://github.com/defenseunicorns/delivery-aws-iac-utils/issues/23)) ([6d52480](https://github.com/defenseunicorns/delivery-aws-iac-utils/commit/6d52480d9be58b1915902c50af809c1daa0c160a))
+
 ## [0.0.5](https://github.com/defenseunicorns/delivery-aws-iac-utils/compare/v0.0.4...v0.0.5) (2023-11-29)
 
 

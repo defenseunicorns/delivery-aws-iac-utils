@@ -272,6 +272,8 @@ github.com/aws/aws-sdk-go v1.54.9 h1:e0Czh9AhrCVPuyaIUnibYmih3cYexJKlqlHSJ2eMKbI
 github.com/aws/aws-sdk-go v1.54.9/go.mod h1:eRwEWoyTWFMVYVQzKMNHWP5/RV4xIUGMQfXQHfHkpNU=
 github.com/aws/aws-sdk-go v1.54.10 h1:dvkMlAttUsyacKj2L4poIQBLzOSWL2JG2ty+yWrqets=
 github.com/aws/aws-sdk-go v1.54.10/go.mod h1:eRwEWoyTWFMVYVQzKMNHWP5/RV4xIUGMQfXQHfHkpNU=
+github.com/aws/aws-sdk-go v1.54.11 h1:Zxuv/R+IVS0B66yz4uezhxH9FN9/G2nbxejYqAMFjxk=
+github.com/aws/aws-sdk-go v1.54.11/go.mod h1:eRwEWoyTWFMVYVQzKMNHWP5/RV4xIUGMQfXQHfHkpNU=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
 github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6rlkpw=
 github.com/bgentry/go-netrc v0.0.0-20140422174119-9fd32a8b3d3d h1:xDfNPAt8lFiC1UJrqV3uuy861HCTo708pDMbjHHdCas=
@@ -1226,6 +1228,8 @@ sigs.k8s.io/aws-iam-authenticator v0.6.19 h1:c35TtOSHAP2B5qUJr1yS6IQSTuL24ymdE/s
 sigs.k8s.io/aws-iam-authenticator v0.6.19/go.mod h1:oAKrGtldY2rr0nyqm1449raoy77O5Cgc5vOWEkba+Qo=
 sigs.k8s.io/aws-iam-authenticator v0.6.20 h1:heAGFNUkYJafT165FOlTWQT1S6UULTHa61w5mHJuSXk=
 sigs.k8s.io/aws-iam-authenticator v0.6.20/go.mod h1:wOXhEO/yKuFQUNIL9uq43vA+/E+k5kb/w1KoZbvEvSk=
+sigs.k8s.io/aws-iam-authenticator v0.6.21 h1:RcZj3vTR8otyZWpk0iTeR+/zVz6uB1FJpPjbnveHlUo=
+sigs.k8s.io/aws-iam-authenticator v0.6.21/go.mod h1:wbtf9grTV8xmT9AnqiHo7KtDvoW464vcY5eVFJm/VgA=
 sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd h1:EDPBXCAspyGV4jQlpZSudPeMmr1bNJefnuqLsRAsHZo=
 sigs.k8s.io/json v0.0.0-20221116044647-bc3834ca7abd/go.mod h1:B8JuhiUyNFVKdsE8h686QcCxMaH6HrOAZj4vswFpcB0=
 sigs.k8s.io/structured-merge-diff/v4 v4.3.0 h1:UZbZAZfX0wV2zr7YZorDz6GXROfDFj6LvqCRm4VUVKk=

@@ -4,7 +4,7 @@ go 1.22.5
 
 require (
 	github.com/aws/aws-sdk-go v1.55.5
-	github.com/gruntwork-io/terratest v0.47.0
+	github.com/gruntwork-io/terratest v0.47.1
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.9.0
 	k8s.io/api v0.31.0
@@ -44,7 +44,7 @@ require (
 	github.com/googleapis/gax-go/v2 v2.12.0 // indirect
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
-	github.com/hashicorp/go-getter v1.7.5 // indirect
+	github.com/hashicorp/go-getter v1.7.6 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/hashicorp/go-safetemp v1.0.0 // indirect
 	github.com/hashicorp/go-version v1.6.0 // indirect

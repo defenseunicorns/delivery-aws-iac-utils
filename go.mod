@@ -4,13 +4,13 @@ go 1.22.5
 
 require (
 	github.com/aws/aws-sdk-go v1.55.5
-	github.com/gruntwork-io/terratest v0.47.1
+	github.com/gruntwork-io/terratest v0.47.2
 	github.com/sirupsen/logrus v1.9.3
 	github.com/stretchr/testify v1.9.0
-	k8s.io/api v0.31.0
-	k8s.io/apimachinery v0.31.0
-	k8s.io/client-go v0.31.0
-	sigs.k8s.io/aws-iam-authenticator v0.6.26
+	k8s.io/api v0.31.2
+	k8s.io/apimachinery v0.31.2
+	k8s.io/client-go v0.31.2
+	sigs.k8s.io/aws-iam-authenticator v0.6.27
 )
 
 require (
